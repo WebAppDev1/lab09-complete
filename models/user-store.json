@@ -5,28 +5,16 @@
       "lastName": "simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1554224211/jlwf1u9bragzvc5pkzho.jpg"
     },
     {
       "firstName": "marge",
       "lastName": "simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
-    },
-    {
-      "firstName": "Rosanne",
-      "lastName": "Birney",
-      "email": "rosanne@gmail.com",
-      "password": "secret",
-      "id": "5bdff439-13b3-4560-b362-7a4622de232f"
-    },
-    {
-      "firstName": "yooo",
-      "lastName": "saaaa",
-      "email": "yooo@gmail.com",
-      "password": "1234",
-      "id": "3ebea92e-afb1-44ae-8f94-6db0c11de3d0"
+      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1554222414/paagum22pnsdeesrtwr0.jpg"
     }
   ]
 }

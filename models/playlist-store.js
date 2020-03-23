@@ -2,7 +2,6 @@
 
 const _ = require('lodash');
 const JsonStore = require('./json-store');
-
 const cloudinary = require('cloudinary');
 const logger = require('../utils/logger');
 
@@ -40,7 +39,7 @@ const playlistStore = {
       });
     this.store.add(this.collection, playlist);
   },
-
+  
   removePlaylist(id) {
     const playlist = this.getPlaylist(id);
     this.store.remove(this.collection, playlist);
@@ -71,7 +70,7 @@ const playlistStore = {
     songs[index].duration = updatedSong.duration;
   },
   
-  getUserPlaylists(userid) {
+    getUserPlaylists(userid) {
     return this.store.findBy(this.collection, { userid: userid });
   },
 };
