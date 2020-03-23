@@ -1,7 +1,7 @@
 dependencies:
   body-parser: 1.19.0
-  cloudinary: 1.19.0
-  cookie-parser: 1.4.4
+  cloudinary: 1.20.0
+  cookie-parser: 1.4.5
   express: 4.17.1
   express-fileupload: 0.1.4
   express-handlebars: 3.1.0
@@ -76,16 +76,15 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
-  /cloudinary/1.19.0:
+  /cloudinary/1.20.0:
     dependencies:
       lodash: 4.17.15
       q: 1.5.1
-      typescript: 2.9.2
     dev: false
     engines:
       node: '>=0.6'
     resolution:
-      integrity: sha512-oEz4Fsqshd9SI7UAvF1CCyAmt3wgsv8tK1eRY0900gQaq+wP8TAzpruxpbQCmxvF6gL9Po7OpO0m0Jefx6uK8w==
+      integrity: sha512-/e76lEr5PS5gefvWUJ2Ou90zuEQCc0agTq8hrx2uxfFhUGlzEQ9mPPcwAeHFY1gj9caq0iHLuvTDvBbLSRhX9w==
   /color-convert/1.9.3:
     dependencies:
       color-name: 1.1.3
@@ -154,25 +153,19 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
-  /cookie-parser/1.4.4:
+  /cookie-parser/1.4.5:
     dependencies:
-      cookie: 0.3.1
+      cookie: 0.4.0
       cookie-signature: 1.0.6
     dev: false
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-lo13tqF3JEtFO7FyA49CqbhaFkskRJ0u/UAiINgrIXeRCY41c88/zxtrECl8AKH3B0hj9q10+h3Kt8I7KlW4tw==
+      integrity: sha512-f13bPUj/gG/5mDr+xLmSxxDsB9DQiTIfhJS/sqjrmfAWiAN+x2O4i/XguTL9yDZ+/IFDanJ+5x7hC4CXT9Tdzw==
   /cookie-signature/1.0.6:
     dev: false
     resolution:
       integrity: sha1-4wOogrNCzD7oylE6eZmXNNqzriw=
-  /cookie/0.3.1:
-    dev: false
-    engines:
-      node: '>= 0.6'
-    resolution:
-      integrity: sha1-5+Ch+e9DtMi6klxcWpboBtFoc7s=
   /cookie/0.4.0:
     dev: false
     engines:
@@ -860,13 +853,6 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
-  /typescript/2.9.2:
-    dev: false
-    engines:
-      node: '>=4.2.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-Gr4p6nFNaoufRIY4NMdpQRNmgxVIGMs4Fcu/ujdYk3nAZqk7supzBE9idmvfZIlH/Cuj//dvi+019qEue9lV0w==
   /uglify-js/3.7.5:
     dependencies:
       commander: 2.20.3

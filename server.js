@@ -7,7 +7,6 @@ const logger = require('./utils/logger');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
 const fileUpload = require('express-fileupload');
 
 // initialise project
@@ -15,12 +14,9 @@ const app = express();
 
 // static files output to public folder
 app.use(express.static("public"));
-
-// use bodyParser, cookieParser, fileUpload
-app.use(bodyParser.urlencoded({ extended: false, }));
 app.use(cookieParser());
-
 app.use(fileUpload());
+app.use(bodyParser.urlencoded({ extended: false, }));
 
 // use handlebars as view engine
 app.engine('.hbs', exphbs({
