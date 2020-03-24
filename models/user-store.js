@@ -2,6 +2,7 @@
 
 const _ = require('lodash');
 const JsonStore = require('./json-store');
+
 const cloudinary = require('cloudinary');
 const logger = require('../utils/logger');
 
@@ -22,20 +23,20 @@ const userStore = {
   getAllUsers() {
     return this.store.findAll(this.collection);
   },
-
+  
   addUser(user, response) {
     user.picture.mv('tempimage', err => {
-    if (!err) {
-      cloudinary.uploader.upload('tempimage', result => {
-        console.log(result);
-        user.picture = result.url;
-        response();
-      });
-    }
+      if (!err) {
+        cloudinary.uploader.upload('tempimage', result => {
+          console.log(result);
+          user.picture = result.url;
+          this.store.add(this.collection, user);
+          response();
+        });
+      }
     });
-    this.store.add(this.collection, user);
   },
-  
+   
   getUserById(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },

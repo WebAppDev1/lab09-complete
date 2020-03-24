@@ -36,9 +36,9 @@ const accounts = {
     const user = request.body;
     user.id = uuid();
     user.picture = request.files.picture;
-    logger.info('registering' + user.email);
-    userstore.addUser(user, function() {
-      response.redirect("/");
+    logger.info(`registering ${user.email}`);
+    userstore.addUser(user, function () {
+      response.redirect('/login');
     });
   },
   

@@ -5,6 +5,7 @@ const logger = require('../utils/logger');
 const uuid = require('uuid');
 const accounts = require ('./accounts.js');
 
+
 const playlistStore = require('../models/playlist-store.js');
 
 // create dashboard object
@@ -19,7 +20,7 @@ const dashboard = {
           title: 'Playlist Dashboard',
           playlists: playlistStore.getUserPlaylists(loggedInUser.id),
           fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
-          picture: loggedInUser.picture
+          picture: loggedInUser.picture,
       };
       logger.info('about to render' + viewData.playlists);
       response.render('dashboard', viewData);
@@ -34,20 +35,21 @@ const dashboard = {
     response.redirect('/dashboard');
   },
   
-  addPlaylist(request, response) {
+ addPlaylist(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     const newPlayList = {
       id: uuid(),
       userid: loggedInUser.id,
       title: request.body.title,
+      duration: request.body.duration,
       picture: request.files.picture,
-      songs: []
+      songs: [],
     };
-    logger.debug("Creating a new Playlist" + newPlayList);
+    logger.debug('Creating a new Playlist' + newPlayList);
     playlistStore.addPlaylist(newPlayList, function() {
-      response.redirect("/dashboard");
+      response.redirect('/dashboard');
     });
-  }
+  },
 };
 
 // export the dashboard module
