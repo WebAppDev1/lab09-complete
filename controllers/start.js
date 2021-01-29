@@ -10,12 +10,12 @@ const start = {
   
   // index method - responsible for creating and rendering the view
   index(request, response) {
-
+    
     const loggedInUser = accounts.getCurrentUser(request);
     logger.info('start rendering');
-
+    
     if(loggedInUser){
-
+      
       const playlists = playlistStore.getAllPlaylists();
       let numPlaylists = playlists.length;
       let numSongs = 0;
@@ -28,7 +28,6 @@ const start = {
         totalPlaylists: numPlaylists,
         totalSongs: numSongs,
         fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
-        picture: loggedInUser.picture,
       };
 
       response.render('start', viewData);

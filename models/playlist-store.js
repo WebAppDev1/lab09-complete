@@ -30,14 +30,14 @@ const playlistStore = {
 
   addPlaylist(playlist, response) {
     playlist.picture.mv('tempimage', err => {
-      if (!err) {
-        cloudinary.uploader.upload('tempimage', result => {
-          console.log(result);
-          playlist.picture = result.url;
-          response();
-        });
-      }
-    });
+        if (!err) {
+          cloudinary.uploader.upload('tempimage', result => {
+            console.log(result);
+            playlist.picture = result.url;
+            response();
+          });
+        }
+      });
     this.store.add(this.collection, playlist);
   },
 
@@ -71,7 +71,7 @@ const playlistStore = {
     songs[index].duration = updatedSong.duration;
   },
   
-    getUserPlaylists(userid) {
+  getUserPlaylists(userid) {
     return this.store.findBy(this.collection, { userid: userid });
   },
 };
