@@ -8,6 +8,3 @@ Lab 9
 
 Exercise:
 - Add images to user registration
-- Added image upload to playlist
-
-
