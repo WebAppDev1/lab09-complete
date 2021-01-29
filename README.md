@@ -1,9 +1,10 @@
-Lab 7
+Lab 9
 =================
 
-- Added update function
-- Added total playlists statistic
-- Added total songs statistic
+- Create cloudinary account
+- Update add playlist form to include image upload
+- Update addPlaylist methods
+- Display playlists with images in card layout
 
 Exercise:
-- Add more statistics e.g. avg, min, max
+- Add images to user registration
