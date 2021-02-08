@@ -1,17 +1,27 @@
 {
   "playlistCollection": [
     {
-      "id": "80892607-b655-4b36-9d31-175248148e38",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "title": "New Playlist",
-      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1582802209/nsgz79rixeruhdo3pi9a.jpg",
-      "songs": []
-    },
-    {
-      "id": "e8adcf75-1c54-4d11-9aee-fe7bfb35f902",
+      "id": "f787eafe-d80d-49a3-8a4e-16fd685b5e24",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "title": "Another playlist",
-      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1584953185/ztqzujjxd5ucolkaemiq.jpg",
+      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1584911713/sjrvxxgo3kh2z2wavemc.jpg",
+      "date": "2020-03-22T21:15:12.954Z",
+      "songs": [
+        {
+          "id": "c4f82a1b-2316-4d12-8c86-27d2a8889881",
+          "title": "sonata no. 10",
+          "artist": "beethoven",
+          "genre": "classical",
+          "duration": "6"
+        }
+      ]
+    },
+    {
+      "id": "e18902a9-51fa-4d81-bdf5-4d45db5ff233",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "Test",
+      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1611933629/muvyr5waxnynhtplw4hu.jpg",
+      "date": "2021-01-29T15:20:29.378Z",
       "songs": []
     }
   ]
