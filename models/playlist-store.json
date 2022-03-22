@@ -8,10 +8,40 @@
       "songs": []
     },
     {
-      "id": "e8adcf75-1c54-4d11-9aee-fe7bfb35f902",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "title": "Another playlist",
-      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1584953185/ztqzujjxd5ucolkaemiq.jpg",
+      "id": "375f507b-f4f6-4b0a-ae8e-57c841bf05fc",
+      "userid": "5bdff439-13b3-4560-b362-7a4622de232f",
+      "title": "Ada's songs",
+      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1618220715/hdkua9hld0cwwyentrj0.jpg",
+      "songs": [
+        {
+          "id": "5ac20d05-0c40-40e9-8388-a8deefdc74ca",
+          "title": "The Shrine / An Argument",
+          "artist": "Fleet Foxes",
+          "genre": "Folk",
+          "duration": "5"
+        }
+      ]
+    },
+    {
+      "id": "69cb6539-4039-48f2-86a4-aa0512d9650b",
+      "userid": "5bdff439-13b3-4560-b362-7a4622de232f",
+      "title": "Finnegan's faves",
+      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1618223367/qp5x4zjk4yw17yxngd7y.jpg",
+      "songs": [
+        {
+          "id": "ff829f52-6b56-4032-8bb1-513f82d6c6fd",
+          "title": "Michael Finnegan",
+          "artist": "unknown",
+          "genre": "folk",
+          "duration": "3"
+        }
+      ]
+    },
+    {
+      "id": "989e824e-7f84-496a-b9c0-4877169c3795",
+      "userid": "5bdff439-13b3-4560-b362-7a4622de232f",
+      "title": "Rosanne's playlist",
+      "picture": "http://res.cloudinary.com/week10lab/image/upload/v1618237813/qlmraj5wimeg9weddwkv.jpg",
       "songs": []
     }
   ]
