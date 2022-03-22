@@ -17,7 +17,8 @@ const dashboard = {
       const viewData = {
         title: "Playlist Dashboard",
         playlists: playlistStore.getUserPlaylists(loggedInUser.id),
-        fullname: loggedInUser.firstName + " " + loggedInUser.lastName
+        fullname: loggedInUser.firstName + " " + loggedInUser.lastName,
+        picture: loggedInUser.picture
       };
       logger.info("about to render" + viewData.playlists);
       response.render("dashboard", viewData);
@@ -31,22 +32,20 @@ const dashboard = {
     response.redirect("/dashboard");
   },
 
-  addPlaylist(request, response) {
-    const date = new Date();
+   addPlaylist(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     const newPlayList = {
       id: uuid(),
       userid: loggedInUser.id,
       title: request.body.title,
       picture: request.files.picture,
-      date: date,
       songs: []
     };
     logger.debug("Creating a new Playlist" + newPlayList);
     playlistStore.addPlaylist(newPlayList, function() {
       response.redirect("/dashboard");
     });
-  }
+  },
 };
 
 // export the dashboard module
