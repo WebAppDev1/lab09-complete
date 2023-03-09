@@ -1,10 +1,9 @@
 'use strict';
 
-// import all required modules
-import logger from '../utils/logger.js';
-import playlistStore from '../models/playlist-store.js';
-import { v4 as uuidv4 } from 'uuid';
-import accounts from './accounts.js';
+const logger = require('../utils/logger');
+const uuid = require('uuid');
+const playlistStore = require('../models/playlist-store');
+const accounts = require ('./accounts.js');
 
 const playlist = {
   index(request, response) {
@@ -16,23 +15,24 @@ const playlist = {
         title: 'Playlist',
         playlist: playlistStore.getPlaylist(playlistId),
         fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+        picture: loggedInUser.picture
       };
       response.render('playlist', viewData);
       }
       else response.redirect('/');
   },
-  deleteSong(request, response) {
+    deleteSong(request, response) {
     const playlistId = request.params.id;
     const songId = request.params.songid;
-    logger.debug(`Deleting Song ${songId} from Playlist ${playlistId}`);
+    logger.debug('Deleting Song' + songId + 'from Playlist' + playlistId);
     playlistStore.removeSong(playlistId, songId);
     response.redirect('/playlist/' + playlistId);
   },
-  addSong(request, response) {
+    addSong(request, response) {
     const playlistId = request.params.id;
     const playlist = playlistStore.getPlaylist(playlistId);
     const newSong = {
-      id: uuidv4(),
+      id: uuid(),
       title: request.body.title,
       artist: request.body.artist,
       genre: request.body.genre,
@@ -40,13 +40,12 @@ const playlist = {
     };
     playlistStore.addSong(playlistId, newSong);
     response.redirect('/playlist/' + playlistId);
-  },
+  },  
   updateSong(request, response) {
     const playlistId = request.params.id;
     const songId = request.params.songid;
     logger.debug("updating song " + songId);
     const updatedSong = {
-      id: songId,
       title: request.body.title,
       artist: request.body.artist,
       genre: request.body.genre,
@@ -57,4 +56,4 @@ const playlist = {
   }
 };
 
-export default playlist;
+module.exports = playlist;
