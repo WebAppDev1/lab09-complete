@@ -1,4 +1,4 @@
-<table class="ui fixed striped table">
+<table class="ui striped table">
   <thead>
     <tr>
       <th class="four wide">Song</th>
@@ -11,34 +11,34 @@
   </thead>
 <tbody>
     {{#each playlist.songs}}
-    <form class = "ui stacked segment form" action="/playlist/{{../playlist.id}}/updatesong/{{id}}" method="POST">
+    <form class = "ui form" action="/playlist/{{../playlist.id}}/updatesong/{{id}}" method="POST">
     <tr class="fields">
       <td class="field">
         <span class="ui input">
-         <input type="text" name="title" autofocus required title = "Please include a valid Title" placeholder="Title" value = "{{title}}">
+         <input placeholder="Title" type="text" size="30" name="title" autofocus required value = "{{title}}">
         </span>
       </td>
       <td class="field">
         <span class="ui input">
-          <input type="text" name="artist" required title = "Please include a valid Artist" placeholder="Artist" value = "{{artist}}">
+          <input placeholder="Artist" type="text" size="30" name="artist" required value = "{{artist}}">
         </span>
       </td>
       <td class="field">
         <span class="ui input">
-          <input type="text" name="genre" autofocus required title = "Please include a valid Genre" placeholder="Genre" value = "{{genre}}">         
+          <input placeholder="Genre" type="text" name="genre" required value = "{{genre}}">
         </span>
       </td>
       <td class="field">
         <span class="ui input">
-          <input type="text" name="duration" required title = "Please enter a valid duration" placeholder="Duration" value = "{{duration}}">
+          <input placeholder="Duration" type="text" name="duration" required value = "{{duration}}">
         </span>
       </td>
       <td class="center aligned">
-        <button class="ui submit icon button"><i class="ui pencil alternate icon"></i></button>
+        <button class="ui submit icon button"><i class="icon pencil alternate"></i></button>
       </td>
       <td class="center aligned">
         <a href="/playlist/{{../playlist.id}}/deletesong/{{id}}" class="ui icon button delsong">
-          <i class="ui trash icon"></i>
+          <i class="icon trash"></i>
         </a>
       </td>
     </tr>
@@ -51,6 +51,6 @@
   <span id="rating"> </span>
 </p>
 
-<button class="ui blue button" id="rateit">
+<button class="ui blue button" onclick="getRating()">
   Rate it! <i class="star icon"></i>
 </button>

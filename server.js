@@ -1,35 +1,39 @@
 // use javascript in strict mode
-"use strict";
+'use strict';
 
 // import all required modules
-import express from "express";
-import exphbs from "express-handlebars";
-import logger from "./utils/logger.js";
-import bodyParser from "body-parser";
-import cookieParser from "cookie-parser";
-import fileUpload from "express-fileupload";
+const express = require("express");
+const logger = require('./utils/logger');
+const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
+const fileUpload = require('express-fileupload');
 
 // initialise project
 const app = express();
 
 // static files output to public folder
 app.use(express.static("public"));
+
+// use bodyParser, cookieParser, fileUpload
 app.use(bodyParser.urlencoded({ extended: false, }));
 app.use(cookieParser());
-app.use(fileUpload({
-  useTempFiles: true
-}));
+
+app.use(fileUpload());
 
 // use handlebars as view engine
-const handlebars = exphbs.create({ extname: ".hbs" });
-app.engine(".hbs", handlebars.engine);
-app.set("view engine", ".hbs");
+app.engine('.hbs', exphbs({
+  extname: '.hbs',
+  defaultLayout: 'main',
+}));
+app.set('view engine', '.hbs');
 
 // import routes file and use this for routing
-import routes from "./routes.js";
-app.use("/", routes);
+const routes = require('./routes');
+app.use('/', routes);
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT || 4000, function () {
-  logger.info("Your app is listening on port " + listener.address().port);
+  logger.info('Your app is listening on port ' + listener.address().port);
 });
