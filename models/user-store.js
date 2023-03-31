@@ -1,40 +1,30 @@
 'use strict';
 
-const _ = require('lodash');
-const JsonStore = require('./json-store');
-
-const cloudinary = require('cloudinary');
-const logger = require('../utils/logger');
-
-try {
-  const env = require('../.data/.env.json');
-  cloudinary.config(env.cloudinary);
-}
-catch(e) {
-  logger.info('You must provide a Cloudinary credentials file - see README.md');
-  process.exit(1);
-}
+import logger from '../utils/logger.js';
+import JsonStore from './json-store.js';
 
 const userStore = {
 
-  store: new JsonStore('./models/user-store.json', {users: []}),
+  store: new JsonStore('./models/user-store.json', { users: [] }),
   collection: 'users',
 
   getAllUsers() {
     return this.store.findAll(this.collection);
   },
-
-  addUser(user) {
-    this.store.add(this.collection, user);
-  },
-
+  
   getUserById(id) {
-    return this.store.findOneBy(this.collection, { id: id });
+    return this.store.findOneBy(this.collection, (user => user.id === id));
   },
-
+  
   getUserByEmail(email) {
-    return this.store.findOneBy(this.collection, { email: email });
+    return this.store.findOneBy(this.collection, (user => user.email === email));
   },
-}
+  
+  addUser(user) {
+    this.store.addCollection(this.collection, user);
+  },
 
-module.exports = userStore;
+
+};
+
+export default userStore;
